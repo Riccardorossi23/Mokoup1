@@ -25,18 +25,18 @@ namespace Mokoup1
         {
             InitializeComponent();
         }
-        
+        string file = @"Mokup.txt";
 
         private void btlGreet_Click(object sender, RoutedEventArgs e)
         {
             string fistName = txtFirstname.Text;
             string SurName = txtLastName.Text;
             DateTime data = Giorno_di_nascita.SelectedDate.Value;
-            if(data>DateTime.Today)
+            if (data > DateTime.Today)
             {
                 MessageBox.Show($"non puoi essere nati,inserire una data valida");
             }
-            else if(fistName!=""||SurName!="")
+            else if (fistName != "" || SurName != "")
             {
                 MessageBox.Show($"hi {fistName} {SurName} {data.ToShortDateString()}");
             }
@@ -44,12 +44,32 @@ namespace Mokoup1
             {
                 MessageBox.Show($"It is not possible, because the fields of existence are not completed");
             }
-           
-           
+
+
         }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             btnPrint.IsEnabled = true;
         }
+        private void check_Unchecked(object sender, RoutedEventArgs e)
+        {
+            btnPrint.IsEnabled = false;
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            string nome = (txtFirstname.Text);
+            string cognome = (txtLastName.Text);
+            var datadinascita = Giorno_di_nascita.SelectedDate;
+            using (StreamWriter w = new StreamWriter("Test.txt", true, Encoding.UTF8))
+            {
+                w.WriteLine($"{nome},{cognome},{datadinascita.Value.ToShortDateString()}");
+                w.Flush();
+            }
+            MessageBox.Show("ho stampato sul file di testo", "informazione", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        }
     }
 }
+  
+    

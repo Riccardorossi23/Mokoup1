@@ -14,7 +14,7 @@
         <TextBox x:Name="txtFirstname"   HorizontalAlignment="Left" Height="40" Margin="190,180,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
         <DatePicker x:Name="Giorno_di_nascita"  HorizontalAlignment="Left" Height="35" Margin="435,105,0,0" VerticalAlignment="Top" Width="150"/>
         <Button Content="Greet!" HorizontalAlignment="Left" Height="50" Margin="130,315,0,0" VerticalAlignment="Top" Width="130" Click="btlGreet_Click"/>
-        <Button IsEnabled="False" x:Name="btnPrint" Content="print" HorizontalAlignment="Left" Height="50" Margin="375,315,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button IsEnabled="False" x:Name="btnPrint" Content="print" HorizontalAlignment="Left" Height="50" Margin="375,315,0,0" VerticalAlignment="Top" Width="150" Click="btnPrint_Click"/>
         <CheckBox Content="I agree to give my information" HorizontalAlignment="Left" Height="45" Margin="190,255,0,0" VerticalAlignment="Top" Width="430" FontWeight="DemiBold" FontSize="24" Checked="CheckBox_Checked"/>
         <Label Content="Date of birth:" HorizontalAlignment="Left" Height="40" Margin="410,55,0,0" VerticalAlignment="Top" Width="175" FontWeight="Bold" FontSize="24"/>
     </Grid>
